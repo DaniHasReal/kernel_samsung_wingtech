@@ -668,7 +668,7 @@ static void rtc_handler(void)
 
 }
 
-/* static DECLARE_TASKLET(rtc_tasklet, rtc_tasklet_handler, 0); */
+/* static DECLARE_TASKLET_OLD(rtc_tasklet, rtc_tasklet_handler); */
 
 /* static irqreturn_t rtc_irq_handler(int irq, void *dev_id) */
 void rtc_irq_handler(void)
