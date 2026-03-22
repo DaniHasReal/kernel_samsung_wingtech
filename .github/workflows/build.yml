@@ -53,7 +53,7 @@ jobs:
       run: |
         make -C $(pwd) O=$(pwd)/out \
           KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y \
-          a04_defconfig
+          rsuntk-a04_defconfig rsuntk.config
 
         make -C $(pwd) O=$(pwd)/out \
           KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y \
