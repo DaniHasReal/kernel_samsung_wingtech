@@ -13,7 +13,7 @@ jobs:
 
     - name: Integrate KernelSU-Next 1.1.1
       run: |
-        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s 1.1.1
+        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.1.1
 
     - name: Install dependencies
       run: |
@@ -36,7 +36,7 @@ jobs:
     - name: Download Clang r383902
       run: |
         cd toolchain/clang
-        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/master/clang-r383902.tar.gz -O clang.tar.gz
+        wget https://github.com/ravindu644/Android-Kernel-Tutorials/releases/download/toolchains/clang-r383902.tar.gz -O clang.tar.gz
         mkdir -p host/linux-x86/clang-r383902
         tar -xzf clang.tar.gz -C host/linux-x86/clang-r383902
 
