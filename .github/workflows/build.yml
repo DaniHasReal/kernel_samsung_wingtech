@@ -15,6 +15,27 @@ jobs:
       run: |
         curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s v1.1.1
 
+    - name: Apply SUSFS patches
+      run: |
+        # Clone susfs at a stable tag
+        git clone https://gitlab.com/simonpunk/susfs4ksu.git -b kernel-4.19 --depth=1
+  
+        # Copy KSU-side patch to your KSU-Next fork folder
+        cp susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch KernelSU-Next/
+
+        # Copy kernel-side patch
+        cp susfs4ksu/kernel_patches/50_add_susfs_in_kernel-4.19.patch .
+
+        # Copy fs and include files
+        cp susfs4ksu/kernel_patches/fs/* fs/
+        cp susfs4ksu/kernel_patches/include/linux/* include/linux/
+
+        # Apply KSU-side patch
+        cd KernelSU-Next && patch -p1 < 10_enable_susfs_for_ksu.patch && cd ..
+
+        # Apply kernel-side patch
+        patch -p1 < 50_add_susfs_in_kernel-4.19.patch
+   
     - name: Install dependencies
       run: |
         sudo apt-get update
