@@ -24,7 +24,7 @@ jobs:
         cp susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch KernelSU-Next/
 
         # Copy kernel-side patch
-        cp susfs4ksu/kernel_patches/50_add_susfs_in_kernel-4.19.patch .
+        # cp susfs4ksu/kernel_patches/50_add_susfs_in_kernel-4.19.patch .
 
         # Copy fs and include files
         cp susfs4ksu/kernel_patches/fs/* fs/
@@ -34,7 +34,7 @@ jobs:
         cd KernelSU-Next && patch -p1 < 10_enable_susfs_for_ksu.patch && cd ..
 
         # Apply kernel-side patch
-        patch -p1 < 50_add_susfs_in_kernel-4.19.patch
+        patch -p1 < susfs4ksu/kernel_patches/50_add_susfs_in_kernel-4.19.patch
    
     - name: Install dependencies
       run: |
