@@ -40,6 +40,10 @@ jobs:
         chmod +x ./SUSFS/Patches/susfs_inline_hook_patches.sh
         ./SUSFS/Patches/susfs_inline_hook_patches.sh
 
+    - name: Integrate NoMount
+      run: |
+        curl https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
+
     - name: Install build dependencies
       run: |
         sudo apt-get update
