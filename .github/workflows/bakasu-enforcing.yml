@@ -59,8 +59,6 @@ jobs:
         chmod +x ./NoMount/kernel/setup.sh
         bash ./NoMount/kernel/setup.sh
 
-        rm -rf NoMount
-
     - name: Install build dependencies
       run: |
         sudo apt-get update
