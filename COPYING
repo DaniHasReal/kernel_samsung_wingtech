@@ -11,6 +11,10 @@ With an explicit syscall exception, as stated at:
 
 	LICENSES/exceptions/Linux-syscall-note
 
+Trademark information of this specific kernel is stated in:
+
+    TRADEMARK.md
+
 In addition, other licenses may also apply. Please see:
 
 	Documentation/process/license-rules.rst
