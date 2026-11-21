@@ -120,7 +120,7 @@ jobs:
 
         sed -i 's/CONFIG_IKHEADERS=y/CONFIG_IKHEADERS=n/g' $(pwd)/out/.config
 
-        if [ "${{ github.event_name }}" = "workflow_call" ]; then
+        if [ -n "${{ inputs.version }}" ]; then
             sed -i "s/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION=\"-TouchDirt-BakaSU-${{ inputs.version }}\"/" out/.config
         else
             sed -i "s/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION=\"-TouchDirt-BakaSU-BETA\"/" out/.config
