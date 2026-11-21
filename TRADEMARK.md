@@ -2,6 +2,8 @@
 
 Copyright (c) 2026 DaniTheSillyFem
 
+This policy is intended to preserve project identity and avoid confusion, not to discourage community contributions or derivative projects.
+
 ## 1. Ownership
 
 "TouchDirt", the TouchDirt name, associated branding, logos, and project identity are identifiers of the original TouchDirt project.
