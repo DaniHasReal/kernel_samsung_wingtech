@@ -20,7 +20,7 @@ jobs:
     - name: Checkout frozen kernel source
       uses: actions/checkout@v7.0.1
       with:
-        ref: susfs-update
+        ref: v1.0.3
 
     - name: Integrating pinned BakaSU revision
       env:

@@ -145,7 +145,6 @@ jobs:
           echo "NoMount: $NOMOUNT_SHA"
 
       - name: Update the fixed release without moving its tag
-        if: ${{ github.event_name == 'workflow_call' || github.event_name == 'schedule' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ inputs.version }}
