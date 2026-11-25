@@ -28,6 +28,10 @@
 #include <linux/sched/task.h>
 #include <linux/fslog.h>
 
+#ifdef CONFIG_KSU_SUSFS
+#include <linux/susfs_def.h>
+#endif
+
 #include "pnode.h"
 #include "internal.h"
 

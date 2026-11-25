@@ -35,9 +35,20 @@
 #include <linux/fscrypt.h>
 #include <linux/fsnotify.h>
 #include <linux/lockdep.h>
+#include <linux/jump_label.h>
 #include <linux/user_namespace.h>
+
+#ifdef CONFIG_KSU_SUSFS
+#include <linux/susfs_def.h>
+#endif
+
 #include <uapi/linux/magic.h>
 #include "internal.h"
+
+#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
+extern bool susfs_is_current_ksu_domain(void);
+extern struct static_key_true susfs_is_sdcard_android_data_not_decrypted;
+#endif
 
 static int thaw_super_locked(struct super_block *sb);
 
